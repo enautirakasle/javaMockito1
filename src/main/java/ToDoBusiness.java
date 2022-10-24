@@ -12,16 +12,17 @@
             this.doService = doService;  
         }  
           
-        public List<String> getTodosforSpring(String user) {  
+        public List<String> getTodosforHibernate(String user) {  
               
-            List<String> retrievedtodos = new ArrayList<String>();  
-            List<String> todos = doService.getTodos(user);  
+            List<String> hibernatelist = new ArrayList<String>();  
+            List<String> Combinedlist = doService.getTodos(user);  
               
-            for(String todo :todos) {  
-                if(todo.contains("Spring")) {  
-                    retrievedtodos.add(todo);  
+            for(String todo: Combinedlist) {  
+                if(todo.contains("Hibernate")) {  
+                    hibernatelist.add(todo);  
                 }  
             }  
-            return retrievedtodos;  
+              
+            return hibernatelist;  
             }  
-     }   
+     }  
