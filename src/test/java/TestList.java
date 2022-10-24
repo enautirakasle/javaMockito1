@@ -1,25 +1,21 @@
     import static org.junit.Assert.*;  
+    import static org.mockito.Mockito.mock;  
     import static org.mockito.Mockito.when;  
       
     import java.util.List;  
     import org.junit.Test;  
-    import org.mockito.Mock;
-import org.mockito.Mockito;  
       
-    public class TestList {   
-          
-          @Test   
-          public void testList_Returns_MultipleValues() {  
+    public class TestList {  
+           
+            @Test   
+              public void testList_get() {  
             
-          List mocklist = Mockito.mock(List.class);  
-          when(mocklist.size()).thenReturn(1).thenReturn(2).thenReturn(3);  
+          List mocklist = mock(List.class);  
             
-          assertEquals(1, mocklist.size());   
-          assertEquals(2, mocklist.size());  
-          assertEquals(3, mocklist.size());  
-            
-          System.out.println(mocklist.size());   
-          System.out.println(mocklist);  
-            
+          when(mocklist.get(0)).thenReturn("Mockito");  
+           
+          assertEquals("Mockito", mocklist.get(0));  
+          System.out.println(mocklist.get(0));  
           }  
-     }    
+     }  
+        
