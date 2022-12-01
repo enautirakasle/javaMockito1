@@ -6,7 +6,6 @@ public class ToDoBusinessStub {
 
 	@Test
 	public void test() {
-
 		ToDoService doServiceStub = new ToDoServiceStub();
 
 		ToDoBusiness business = new ToDoBusiness(doServiceStub);
